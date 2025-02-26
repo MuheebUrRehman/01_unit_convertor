@@ -24,6 +24,6 @@ if st.button("Convert"):
     try:
         value_in_meters = value * conversion_factors[from_unit]
         result = value_in_meters / conversion_factors[to_unit]
-        st.success(f"{value} {from_unit} is equal to {result} {to_unit}")
+        st.success(f"{value} {from_unit} is equal to {result:.4f} {to_unit}")
     except Exception as e:
         st.error(f"Conversion error: {e}")

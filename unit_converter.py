@@ -11,7 +11,7 @@ conversion_factors = {
     "inch": 0.0254,
 }
 
-st.set_page_config(page_title="Length Unit Converter", layout="centered")
+st.set_page_config(page_title="Unit Converter", layout="centered")
 st.title("Length Unit Converter")
 st.write("Convert between different length units.")
 
@@ -21,9 +21,6 @@ from_unit = st.selectbox("From Unit", list(conversion_factors.keys()))
 to_unit = st.selectbox("To Unit", list(conversion_factors.keys()))
 
 if st.button("Convert"):
-    try:
-        value_in_meters = value * conversion_factors[from_unit]
-        result = value_in_meters / conversion_factors[to_unit]
-        st.success(f"{value} {from_unit} is equal to {result:.4f} {to_unit}")
-    except Exception as e:
-        st.error(f"Conversion error: {e}")
+    value_in_meters = value * conversion_factors[from_unit]
+    result = value_in_meters / conversion_factors[to_unit]
+    st.success(f"{value} {from_unit} is equal to {result:.4f} {to_unit}")
